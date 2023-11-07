@@ -2,15 +2,20 @@ from tkinter import *
 from tkinter import ttk
 import tkinter as tk
 
+# global build string that builds answer
 build = ""
+
+# function to add number to build string
 def number_pressed(num):
     build_string(num)
     return num
 
+# add operator to build string
 def operator_pressed(operator):
     build_string(operator)
     return operator
 
+# build string operations that will be called on button press
 def build_string(button):
     global build 
     build = build + (str(button))
@@ -18,6 +23,7 @@ def build_string(button):
     
     return build
 
+# perform calculations
 def equals_pressed():
     try:
         global build
@@ -30,7 +36,7 @@ def equals_pressed():
     entry_text.set(str(build))
     return answer
 
-
+# define gui elements
 if __name__ =='__main__':
     root = Tk()
     root.title("Calculator.py")
